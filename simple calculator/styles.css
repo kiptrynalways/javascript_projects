@@ -1,0 +1,55 @@
+*, *::before, *::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: normal;
+}
+body {
+  background: linear-gradient( to left, rgb(0, 255, 242), rgb(0, 180, 219) );
+  margin: 0;
+  padding: 0;
+}
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;/*it is going to fill 100% height all the time*/
+    grid-template-columns: repeat(4,100px);/* four colums with 100px wide*/
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);/*minimum which is 120px tall and maximum which is going to be as large as it want. and also 5 rows with 100px each*/
+    
+}
+.calculator-grid > button {/* this select all the buttonsinside all the div*/ 
+cursor: pointer;
+font-size: 2rem;
+border: 1px solid white;
+outline: none;
+background-color: rgba(255, 255, 255, .75);
+}
+.calculator-grid > button:hover {
+    background-color: rgba(255, 255, 255, .9);
+}
+.span-two{
+    grid-column: span 2; /* this simply span two columns*/
+}
+.output{
+    grid-column: 1 / -1;/* this is column number 1 to last column. this spans the entire width of the container*/
+    background-color: rgba(0, 0, 0, .75);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output .previous-operandi {
+    color: rgba(255, 255, 255, .75);
+    font-size: 2.5rem;
+}
+
+.output .current-operandi {
+    color: white;
+    font-size: 2.5rem
+}
